@@ -49,7 +49,7 @@ El objetivo es que el script pueda ejecutar las funciones que programaste en el 
 
 Ejemplo
 
-python -m logs.py run_selected_exercise --jsonpath `/path/to/logs.json` --exercisenumber 1
+`python -m logs.py run_selected_exercise --jsonpath /path/to/logs.json --exercisenumber 1`
 
 ---
 
