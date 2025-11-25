@@ -1,3 +1,5 @@
+import argparse
+
 # %% [markdown]
 # # Análisis de Logs en JSON  
 # ### Uso de listas, diccionarios y sets en Python
@@ -257,7 +259,7 @@ def run_selected_exercise(json_path: str, exercise_number: int):
     
     if exercise_number == 1:
         print("\n Ejecutando Ejercicio 1: Conteo de Acciones")
-        result = count_actions_if_else(logs)
+        result = count_actions(logs)
     
     elif exercise_number == 2:
         print("\n Ejecutando Ejercicio 2: Usuarios Únicos")
@@ -282,4 +284,23 @@ def run_selected_exercise(json_path: str, exercise_number: int):
     print("\n[RESULTADO DEL EJERCICIO]")
     print(result)
 
+def main():
 
+    parser = argparse.ArgumentParser(description="Dirige la ejecución de los ejercicios de logs.")
+    parser.add_argument("--jsonpath", type=str, help="Ruta al archivo JSON de logs.")
+    parser.add_argument( "--exercisenumber",
+        type=int,
+        choices=[1,2,3,4,5],
+        help="Número del ejercicio a ejecutar (1, 2, 3, 4 o 5)"
+    )
+
+    args = parser.parse_args()
+
+
+
+
+    run_selected_exercise(args.jsonpath, args.exercisenumber)
+
+
+if __name__ == "__main__":
+    main()
